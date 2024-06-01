@@ -30,22 +30,27 @@ How to compile Smartpqi kernel driver from source and build rpm package
 -  rpmdev-newspec smartpqi
 
 # Build binary and source rpm packages.
-rpmbuild -ba ~/rpmbuild/SPECS/smartpqi.spec
-# -bb for binary rpm only; -bs for source rpm only
 
-Optional:
+use rpmbuild -ba ~/rpmbuild/SPECS/smartpqi.spec
+- cp smartpqi.spec ~/rpmbuild/SPECS
+
+# rpm build options: 
+-  bb for binary rpm only
+-  bs for source rpm only
+
+# Optional:
 
 # Move build smartpqi.ko to kernel module folder
 
-mkdir -p /lib/modules/3.14.4-200.fc20.x86_64/extra/smartpqi/
-cp smartpqi.ko /lib/modules/3.14.4-200.fc20.x86_64/extra/smartpqi/
+-  mkdir -p /lib/modules/3.14.4-200.fc20.x86_64/extra/smartpqi/
+-  cp smartpqi.ko /lib/modules/3.14.4-200.fc20.x86_64/extra/smartpqi/
 
 # Copy config file so module can be loaded upon reboot
 
-cp depmod.d/smartpqi.conf /etc/depmod.d/
-cp dracut.conf.d/smartpqi.conf /etc/dracut.conf.d/
+-  cp depmod.d/smartpqi.conf /etc/depmod.d/
+-  cp dracut.conf.d/smartpqi.conf /etc/dracut.conf.d/
 
 # Manually Load kernel module
 
-depmod -a
-modprobe smartpqi
+-  depmod -a
+-  modprobe smartpqi
