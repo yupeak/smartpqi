@@ -38,7 +38,7 @@ use rpmbuild -ba ~/rpmbuild/SPECS/smartpqi.spec
 -  bb for binary rpm only
 -  bs for source rpm only
 
-# Optional:
+# Optional Use prebuild rpm package for Fedora 20 3.14.4-200.fc20.x86_64:
 
 # Move build smartpqi.ko to kernel module folder
 
