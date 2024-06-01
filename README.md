@@ -2,11 +2,11 @@ How to compile Smartpqi kernel driver from source and build rpm package
 
 # Clone git source tree 
 
-mkdir -p ~/Projects
-cd ~/Projects
-git clone https://github.com/yupeak/smartpqi.git
-cd smartpqi
-make -f Makefile.alt
+  mkdir -p ~/Projects
+  cd ~/Projects
+  git clone https://github.com/yupeak/smartpqi.git
+  cd smartpqi
+  make -f Makefile.alt
 
 
 # 3) Build rpm package
